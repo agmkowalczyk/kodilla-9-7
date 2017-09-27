@@ -1,0 +1,27 @@
+{
+  "name": "zadanie-8-3",
+  "version": "1.0.0",
+  "description": "kodilla zadanie 8 3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "agmkowalczyk",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "grunt": "^1.0.1",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^2.0.0"
+  },
+  "dependencies": {
+    "grunt-sass": "^2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "zadanie-8-3"
+  }
+}
