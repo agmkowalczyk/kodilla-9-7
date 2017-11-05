@@ -40,11 +40,12 @@ function setGameElements() {
         resultsElem.style.display = 'block';
       break;
     case 'ended':
+
         newGameBtn.innerText = 'Jeszcze raz';
-        newGameElem.style.display = 'block';
-        pickElem.style.display = 'none';
-        resultsElem.style.display = 'block';
-      break;
+        //newGameElem.style.display = 'block';
+        //pickElem.style.display = 'none';
+        //resultsElem.style.display = 'block';
+      //break;
     case 'notStarted':  // jshint zgłasza błąd Expected a 'break' statement before 'default'
     //break;         
     default:
@@ -71,16 +72,9 @@ function newGame() {
     setGameElements();
 
     playerNameElem.innerHTML = player.name;
-    //    setGamePoints(); // This function has not been created yet 
+        setGamePoints(); 
   }
 }    
-
-
-/* --- pobranie wyboru gracza --- */
-
-function playerPick(playerPick) {
-    console.log(playerPick);
-}
 
 
 /* --- losowanie wyboru komputera --- */
@@ -94,13 +88,6 @@ var playerPickElem = document.getElementById('js-playerPick'),
     computerPickElem = document.getElementById('js-computerPick'),
     playerResultElem = document.getElementById('js-playerResult'),
     computerResultElem = document.getElementById('js-computerResult');
-
-function playerPick(playerPick) {
-    var computerPick = getComputerPick();
-
-    playerPickElem.innerHTML = playerPick;
-    computerPickElem.innerHTML = computerPick;
-}
 
 
 /* --- przyznanie punktów --- */
@@ -157,16 +144,16 @@ function setGamePoints() {
 
 
 function checkGameWinner() {
-  if (player.score == 2) {
-    var playerWon = 'GRATULACJE, ' + player.name + ' wygrywasz!';
+  if (player.score == 3) {
+    var playerWon = 'GRATULACJE, ' + player.name + ' wygrywasz z wynikiem: ' + player.score + ' : ' + computer.score;
     setTimeout(function(){ alert(playerWon); }, 100);
 
     gameState = 'ended';
     setGameElements();
 
-  } else if (computer.score == 2) {
+  } else if (computer.score == 3) {
 
-    var computerWon = 'Wygrał komputer.';
+    var computerWon = 'Wygrał komputer z wynikiem: '  + computer.score + ' : ' + player.score;
     setTimeout(function(){ alert(computerWon); }, 100);
 
     gameState = 'ended';
